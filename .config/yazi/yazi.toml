@@ -1,0 +1,14 @@
+[open]
+prepend_rules = [
+  { mime = "image/*", use = "imv" },
+]
+
+[opener]
+imv = [
+  { run = 'imv "$1"', orphan = true }
+]
+
+[plugin]
+append_spotters = [
+  { url = "*", run = "file-extra-metadata" },
+]

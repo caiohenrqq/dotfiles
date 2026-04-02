@@ -1,0 +1,111 @@
+{
+  "position": "top",
+  "height": 26,
+
+  "modules-left": ["hyprland/workspaces", "custom/media"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "pulseaudio",
+    "custom/mic",
+    "bluetooth",
+    "network",
+    "battery",
+    "clock",
+    "tray"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "all-outputs": false,
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  "hyprland/window": {
+    "max-length": 60,
+    "separate-outputs": true
+  },
+
+  "tray": {
+    "spacing": 8
+  },
+
+  "clock": {
+    "format": "{:%I:%M}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip": false
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-alt": "{time}",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+
+  "network": {
+    "format-wifi": "",
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+    "format-linked": " {ifname} (No IP)",
+    "format-disconnected": "󰖪",
+    "on-click": "kitty -e nmtui"
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-on": "",
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias}\n{controller_address}",
+    "tooltip-format-off": "{controller_alias}\nBluetooth off",
+    "tooltip-format-connected": "{controller_alias}\n{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "kitty -e bluetuith"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}   {volume}%",
+    "format-bluetooth": "{icon}   {volume}%",
+    "format-bluetooth-muted": "󰝟",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "kitty -e pulsemixer"
+  },
+
+  "custom/mic": {
+    "exec": "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{if ($3 == \"[MUTED]\") print \"\"; else print \" \" int($2*100) \"%\"}'",
+    "interval": 1,
+    "on-click": "kitty -e pulsemixer"
+  },
+
+  "custom/media": {
+    "format": "{}",
+    "return-type": "json",
+    "max-length": 40,
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+  }
+}

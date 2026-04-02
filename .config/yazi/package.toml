@@ -1,0 +1,7 @@
+[[plugin.deps]]
+use = "boydaihungst/file-extra-metadata"
+rev = "871ba3c"
+hash = "ff02946e042df4869617edb9aa310523"
+
+[flavor]
+deps = []
