@@ -116,5 +116,5 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=nvim
 export VISUAL=nvim
 
-source /usr/share/fzf/key-bindings.zsh
-alias config=/'/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+[[ -r /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'

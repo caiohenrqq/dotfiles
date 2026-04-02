@@ -2,7 +2,7 @@
   "position": "top",
   "height": 26,
 
-  "modules-left": ["hyprland/workspaces", "custom/media"],
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "pulseaudio",
@@ -99,13 +99,5 @@
     "exec": "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{if ($3 == \"[MUTED]\") print \"\"; else print \" \" int($2*100) \"%\"}'",
     "interval": 1,
     "on-click": "kitty -e pulsemixer"
-  },
-
-  "custom/media": {
-    "format": "{}",
-    "return-type": "json",
-    "max-length": 40,
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
   }
 }

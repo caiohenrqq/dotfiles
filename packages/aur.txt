@@ -1,0 +1,6 @@
+bitwarden-bin
+bluetuith
+clipse
+fsel-git
+yay
+yay-debug

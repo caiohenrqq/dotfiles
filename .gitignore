@@ -1,0 +1,48 @@
+# Shell/editor noise
+*.swp
+*.swo
+*~
+.zcompdump*
+.zcompdump*.zwc
+
+# Logs and temp files
+*.log
+*.tmp
+.DS_Store
+
+# Secrets and identity
+.ssh/
+.gnupg/
+.pki/
+.gitconfig.local
+.zsh_history
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.profile
+
+# XDG cache/state/share
+.cache/
+.local/state/
+.local/share/
+
+# Tooling and work directories outside dotfiles scope
+.cargo/
+.rustup/
+.codex/
+.oh-my-zsh/
+go/
+Downloads/
+
+# App-local private or machine state
+.config/Bitwarden/
+.config/mozilla/
+.config/google-chrome/
+.config/chromium/
+.config/discord/
+.config/Code/
+.config/Slack/
+
+# Neovim generated/runtime data
+.config/nvim/doc/tags
