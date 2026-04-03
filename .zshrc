@@ -118,3 +118,4 @@ export VISUAL=nvim
 
 [[ -r /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+[[ -r "$HOME/.config/zsh/keyboard-layout.zsh" ]] && source "$HOME/.config/zsh/keyboard-layout.zsh"
