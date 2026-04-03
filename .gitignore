@@ -26,11 +26,21 @@
 .cache/
 .local/state/
 .local/share/
+.local/share/flatpak/
 
 # Tooling and work directories outside dotfiles scope
 .cargo/
 .rustup/
 .codex/
+.flatpak/
+.var/
+.npm/
+.yarn/
+.gradle/
+.bundle/
+.android/
+.mozilla/
+.steam/
 .oh-my-zsh/
 go/
 Downloads/

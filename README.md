@@ -3,7 +3,7 @@
 Personal Linux dotfiles managed with a bare Git repo:
 
 ```sh
-git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 ```
 
 This repo tracks the shell, Git defaults, Hyprland, Waybar, Kitty, Neovim, Yazi, and small helper configs needed to reproduce the environment on a new machine.
@@ -14,8 +14,9 @@ Clone the bare repository and check it out into `$HOME`:
 
 ```sh
 git clone --bare git@github.com:caiohenrqq/dotfiles.git "$HOME/.dotfiles"
-git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" checkout
-git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" config status.showUntrackedFiles no
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+config checkout
+config config status.showUntrackedFiles no
 ```
 
 Install packages from the manifests in `packages/`, then create your local Git identity file:
